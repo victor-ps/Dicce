@@ -9,11 +9,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    var lefDicceNumber: Int = 1
+    var rightDicceNumber: Int = 6
+    
+    let dicceArray = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
+    
+    
+    @IBOutlet weak var dicceImageView1: UIImageView!
+    @IBOutlet weak var dicceImageView2: UIImageView!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        dicceImageView1.image = dicceArray.randomElement()
+        dicceImageView2.image = dicceArray.randomElement()
     }
 
-
+    @IBAction func rollButtonPressed(_ sender: UIButton) {
+        
+        
+        
+        dicceImageView1.image = dicceArray.randomElement()
+        dicceImageView2.image = dicceArray [Int.random(in: 0...5)] // Another Way to randomize
+    }
+    
 }
 
